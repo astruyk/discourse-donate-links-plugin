@@ -1,0 +1,35 @@
+<script type="text/discourse-plugin" version="0.4">
+	var h = require('virtual-dom').h;
+
+	api.createWidget('hamburger-ads-widget', {
+		tagName: 'div.menu-container-ad-links',
+
+		html() {
+		return [
+			h('hr'),
+			h('div.menu-container-ad-links-text', 'Help support the site!'),
+			h('a',
+				{
+					href:'https://www.google.ca',
+					target:'_blank'
+				},
+				'Donate'
+			),
+			h('span.menu-container-ad-links-text', ' or '),
+			h('a',
+				{
+					href: 'https://www.google.ca'
+				},
+				'Become A Patron'
+			)
+		];
+		}
+	});
+
+
+	api.decorateWidget('menu-links:after', (helper)=>{
+		if (helper.attrs.name === 'footer-links') {
+			return [helper.widget.attach('hamburger-ads-widget')];
+		}
+	});
+</script>
