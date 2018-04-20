@@ -5,7 +5,6 @@ function initializePlugin(api, siteSettings) {
 	api.decorateWidget('menu-links:after', (helper) => {
 		if (siteSettings.donate_links_enabled && helper.attrs.name === 'footer-links') {
 			let content = [
-				h('hr'),
 				h('div.menu-container-donate-links-text', siteSettings.donate_links_prompt),
 				h('a',
 					{
@@ -14,8 +13,9 @@ function initializePlugin(api, siteSettings) {
 					},
 					siteSettings.donate_links_first_text
 				)
-			]
+			];
 
+			// Append the 'or XXX' text if there's actually another URL to link to.
 			if (siteSettings.donate_links_second_url !== "") {
 				content.push(h('span.menu-container-donate-links-text', ' or '));
 				content.push(
@@ -27,7 +27,11 @@ function initializePlugin(api, siteSettings) {
 					)
 				);
 			}
-			return content;
+
+			return [
+				h('hr'),
+				h('div.menu-container-donate-links', content)
+			];
 		}
 	});
 }
