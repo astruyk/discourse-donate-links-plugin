@@ -4,7 +4,7 @@ import { h } from 'virtual-dom';
 function initializePlugin(api, siteSettings) {
 	api.decorateWidget('menu-links:after', (helper) => {
 		if (helper.attrs.name === 'footer-links') {
-			return [
+			let content = [
 				h('hr'),
 				h('div.menu-container-donate-links-text', siteSettings.donate_links_prompt),
 				h('a',
@@ -13,15 +13,21 @@ function initializePlugin(api, siteSettings) {
 						target:'_blank'
 					},
 					siteSettings.donate_links_first_text
-				),
-				h('spanmenu-container-donate-links-text', ' or '),
-				h('a',
-					{
-						href: siteSettings.donate_links_second_url
-					},
-					siteSettings.donate_links_second_text
 				)
-			];
+			]
+
+			if (siteSettings.donate_links_second_url !== "") {
+				content.push(h('span.menu-container-donate-links-text', ' or '));
+				content.push(
+					h('a',
+						{
+							href: siteSettings.donate_links_second_url
+						},
+						siteSettings.donate_links_second_text
+					)
+				);
+			}
+			return content;
 		}
 	});
 }
