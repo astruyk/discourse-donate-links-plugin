@@ -3,7 +3,7 @@ plugins:
     default: false
     client: true
   donate_links_prompt:
-    default: "Want to support the site?"
+    default: "Want to support this site?"
     client: true
   donate_links_first_url:
     default: "https://www.google.ca"
