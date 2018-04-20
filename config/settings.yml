@@ -12,7 +12,7 @@ plugins:
     default: "Donate!"
     client: true
   donate_links_second_url:
-    default: "https://www.google.ca"
+    default: ""
     client: true
   donate_links_second_text:
     default: "Donate Again!"
