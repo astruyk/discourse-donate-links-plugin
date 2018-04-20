@@ -4,4 +4,6 @@
 # authors: Anton Struyk
 # url: https://github.com/astruyk/discourse-donate-links-plugin
 
+register_asset "styles.css"
+
 enabled_site_setting :donate_links_enabled
