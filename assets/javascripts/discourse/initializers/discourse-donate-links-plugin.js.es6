@@ -21,7 +21,8 @@ function initializePlugin(api, siteSettings) {
 				content.push(
 					h('a',
 						{
-							href: siteSettings.donate_links_second_url
+							href: siteSettings.donate_links_second_url,
+							target:'_blank'
 						},
 						siteSettings.donate_links_second_text
 					)
