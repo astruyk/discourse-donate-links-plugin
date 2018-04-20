@@ -3,7 +3,7 @@ import { h } from 'virtual-dom';
 
 function initializePlugin(api, siteSettings) {
 	api.decorateWidget('menu-links:after', (helper) => {
-		if (helper.attrs.name === 'footer-links') {
+		if (siteSettings.donate_links_enabled && helper.attrs.name === 'footer-links') {
 			let content = [
 				h('hr'),
 				h('div.menu-container-donate-links-text', siteSettings.donate_links_prompt),
