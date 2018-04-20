@@ -2,6 +2,9 @@ plugins:
   donate_links_enabled:
     default: false
     client: true
+  donate_links_prompt:
+    default: "Help support the site!"
+    client: true
   donate_links_first_url:
     default: "https://www.google.ca"
     client: true

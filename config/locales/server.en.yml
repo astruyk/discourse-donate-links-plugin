@@ -1,6 +1,7 @@
 en:
   site_settings:
     donate_links_enabled: "discourse-donate-links-plugin enabled?"
+    donate_links_prompt: "Donate link prompt"
     donate_links_first_url: "First donate link URL"
     donate_links_first_text: "First donate link text"
     donate_links_second_url: "Second donate link URL"
