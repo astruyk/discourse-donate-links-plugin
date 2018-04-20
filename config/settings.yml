@@ -1,0 +1,16 @@
+plugins:
+  donate_links_enabled:
+    default: false
+    client: true
+  donate_links_first_url:
+    default: "https://www.google.ca"
+    client: true
+  donate_links_first_text:
+    default: "Donate!"
+    client: true
+  donate_links_second_url:
+    default: "https://www.google.ca"
+    client: true
+  donate_links_second_text:
+    default: "Donate Again!"
+    client: true
